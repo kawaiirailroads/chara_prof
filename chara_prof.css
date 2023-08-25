@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+@keyframes chara_prof{
+    0% {transform: translateX(200px); opacity:0;}
+    100%{transform: translateX(0px); opacity:1;}
+}
+
+@keyframes linecolor{
+    0%{width: 0%;}
+    100%{width: 100%;}
+}
+
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    background:rgba(234, 232, 225, 1);
+}
+
+.wrap{
+    position:relative; 
+    margin: 0 auto;
+    width: 100vw;
+}
+
+.sample1{
+    background: linear-gradient(to bottom,rgba(234, 232, 225, 0), rgba(234, 232, 225, 0.7), rgba(234, 232, 225, 1)),url(img/chara_sample.png);
+    position: absolute; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation-name: chara_prof;
+    animation-duration: 1.5s;
+    width: 80vw;
+    height: 100vh;
+    left: 14vw;
+    top: 6vh;
+    padding-top: 66.64%; /* (img-height / img-width * container-width) */
+                /* (853 / 1280 * 100) */
+    z-index: -1;
+}
+
+.sample2{
+    background: linear-gradient(to bottom,rgba(234, 232, 225, 0), rgba(234, 232, 225, 0.7), rgba(234, 232, 225, 1)),url(img/chara_sample2.png);
+    position: absolute; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation-name: chara_prof;
+    animation-duration: 1.5s;
+    width: 80vw;
+    height: 100vh;
+    left: 14vw;
+    top: 6vh;
+    padding-top: 66.64%; /* (img-height / img-width * container-width) */
+                /* (853 / 1280 * 100) */
+    z-index: -1;
+}
+
+h1{
+    position: relative;
+    padding: 6px 0;
+}
+
+.sample1_line:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border-bottom: solid 8px #5892cb;
+    border-image: linear-gradient(to right, #5892cb 0%,#50b0bd 100%);
+    border-image-slice: 1;
+	animation: linecolor 1s linear forwards;
+    width: 88vw;
+}
+
+.sample2_line:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border-bottom: solid 8px #eeb641;
+	animation: linecolor 1s linear forwards;
+    width: 88vw;
+}
+
+table{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 20px 0;
+    padding: 10px 0;
+    line-height: 2;
+    font-size: 0.8em;
+    width: 88vw;
+}
+
+table td:nth-child(odd){
+    position: relative;
+    width: 20vw;
+  }
+
+table td:nth-child(even){
+    position: relative;
+    width: 60vw;
+    right: -4vw;
+}
+
+table td:nth-child(odd):after{
+    display: block;
+    content: "";
+    width: 5vw;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+  }
+
+.profile{
+    position: absolute;
+    z-index: 2;
+    top: 35vh;
+    opacity: 0.9;
+    width: 88vw;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px;
+}
